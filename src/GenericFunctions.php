@@ -7,8 +7,6 @@
  * Date Created: 05/27/20
  */
 
-namespace Common\Generic;
-
 /**
  * This function is just a universal function to convert a number to a letter and works past Z. Found the solution here: https://stackoverflow.com/questions/3302857/algorithm-to-get-the-excel-like-column-name-of-a-number
  * @param  string $n The numeric character to be converted to an alpha character

@@ -1,5 +1,5 @@
 {
-    "name": "3bg-supply-co/generic-php-functions",
+    "name": "3bg-supply-co/php-functions",
     "description": "This package contains random functions and classes that can be reused in any PHP project.",
     "type": "library",
     "license": "MIT",
@@ -10,16 +10,22 @@
         }
     ],
     "minimum-stability": "stable",
-    "require": {},
+    "prefer-stable": true,
+    "require": {
+	    "php": "^7.2"
+    },
     "repositories": [
-	{
-	    "type": "git",
-	    "url":  "https://github.com/3bg-supply-co/php-functions"
-	}
+      {
+          "type": "git",
+          "url":  "https://github.com/3bg-supply-co/php-functions"
+      }
     ],
     "autoload": {
-	"psr-4": {
-	    "Common\\": "src/"
-	}
+      "files": [
+        "src/GenericFunctions.php"
+      ],
+      "psr-4": {
+        "Common3BG\\": "src/"
+      }
     }
 }
