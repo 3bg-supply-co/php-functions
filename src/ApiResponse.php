@@ -13,7 +13,7 @@ namespace Common3BG;
 /**
  * This generic class is used to build the response JSON string that will be sent back to the requester
  */
-class API_Response {
+class ApiResponse {
   /**
    * This property will contain the data requested
    * @var array
