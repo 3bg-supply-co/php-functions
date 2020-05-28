@@ -9,7 +9,7 @@
             "email": "ben@3bgsupply.com"
         }
     ],
-    "minimum-stability": "stable",
+    "minimum-stability": "master",
     "require": {
 	    "php": "^7.2"
     },
@@ -20,10 +20,10 @@
 	}
     ],
     "autoload": {
-	"psr-4": {
-	    "Common\\Generic\\": "src/",
-	    "Common\\HttpPost\\": "src/",
-	    "Common\\API_Response\\": "src/"
-	}
+      "psr-4": {
+        "Common\\Generic\\": "src/",
+        "Common\\HttpPost\\": "src/",
+        "Common\\API_Response\\": "src/"
+      }
     }
 }
