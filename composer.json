@@ -15,16 +15,8 @@
     },
     "repositories": [
 	{
-	    "type": "package",
-	    "package": {
-		    "name":"3bg-supply-co/generic-php-functions",
-		    "version":"stable",
-		    "source": {
-			    "type":"git",
-			    "reference":"stable",
-			    "url":"https://github.com/3bg-supply-co/php-functions"
-		    }
-	    }
+	    "type": "git",
+	    "url":  "https://github.com/3bg-supply-co/php-functions"
 	}
     ],
     "autoload": {
