@@ -7,7 +7,7 @@
  * Date Created: 05/27/20
  */
 
-namespace Common;
+namespace Common3BG;
 
 
 /**
