@@ -1,5 +1,5 @@
 {
-    "name": "3bg-supply-co/generic-php-functions",
+    "name": "3bg-supply-co/php-functions",
     "description": "This package contains random functions and classes that can be reused in any PHP project.",
     "type": "library",
     "license": "MIT",
