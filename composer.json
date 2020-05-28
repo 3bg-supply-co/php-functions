@@ -21,8 +21,11 @@
       }
     ],
     "autoload": {
+      "files": [
+        "src/genericFunctions.php"
+      ],
       "psr-4": {
-        "Common\\": "src/"
+        "Common3BG\\": "src/"
       }
     }
 }
