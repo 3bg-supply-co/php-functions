@@ -21,9 +21,9 @@
     ],
     "autoload": {
 	"psr-4": {
-	    "Common\\Generic": "src/",
-	    "Common\\HttpPost": "src/",
-	    "Common\\API_Response": "src/"
+	    "Common\\Generic\\": "src/",
+	    "Common\\HttpPost\\": "src/",
+	    "Common\\API_Response\\": "src/"
 	}
     }
 }
