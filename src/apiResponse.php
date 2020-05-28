@@ -7,7 +7,7 @@
  * Date Created: 05/27/20
  */
 
-namespace Common\API_Response;
+namespace Common;
 
 
 /**

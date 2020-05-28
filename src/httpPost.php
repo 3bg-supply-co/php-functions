@@ -7,7 +7,7 @@
  * Date Created: 05/27/20
  */
 
-namespace Common\HttpPost;
+namespace Common;
 
 // This class is used for building the cUrl setup in a class form
 class HttpPost
