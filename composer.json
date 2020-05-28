@@ -22,7 +22,7 @@
     ],
     "autoload": {
       "files": [
-        "src/genericFunctions.php"
+        "src/GenericFunctions.php"
       ],
       "psr-4": {
         "Common3BG\\": "src/"
