@@ -186,3 +186,37 @@ function writeLog($message, $logFile = null)
     throw new Exception('Failed to close the Log file');
   }
 }
+
+/**
+ * This function is used to parse the credentials file and define the $request section(s) of credentials. An array of one or multiple credential sections can be given and the function will define the constants with the names as they appear in the file
+ * @method getCredentials
+ * @param  array   $request is the array of sections that MUST match what exists in the $credentials file in order to work
+ */
+function getCredentials($request)
+{
+    // Set the variables for this function
+    $credentials = realpath(__DIR__ . '/../..') . '/credentials/credentials.ini';
+
+    // Before anything, check to make sure there was a $request given
+    if (!is_array($request) || empty($request)) {
+        // Since there was no proper $request supplied, throw an exception
+        throw new \Exception('No array Request given for Credentials, so no credentials will be given. Request given was: ' . print_r($request, 1));
+    }
+
+    // Since there was a $request given, begin parsing the $credentials file
+    $parsedCredentials = parse_ini_file($credentials, true);
+
+    // Now loop the $request to define the variables
+    foreach ($request as $section) {
+        if (!isset($parsedCredentials[$section])) {
+            // For debugging purposes
+            writeLog("Requested Credentials section of: " . $section . " was not found in the Credentials file. Will continue to the next requested section");
+            continue;
+        }
+
+        // Since the $section was set, then loop through the $section do define the variables
+        foreach ($parsedCredentials[$section] as $globalVariable => $value) {
+            defined($globalVariable) or define($globalVariable, $value);
+        }
+    }
+}
