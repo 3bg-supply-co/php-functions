@@ -140,7 +140,7 @@ function setScriptName()
 {
     // Get the trace of who called this script and remove the ".php" suffix
     $backtrace = debug_backtrace();
-    define('SCRIPT_NAME', basename($backtrace[1]['file'], '.php'));
+    define('SCRIPT_NAME', basename(end($backtrace)['file'], '.php'));
 }
 
 /**
