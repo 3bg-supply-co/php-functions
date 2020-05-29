@@ -198,7 +198,7 @@ function writeLog($message, $logFile = null)
 function getCredentials($request)
 {
     // Set the variables for this function
-    $credentials = realpath(__DIR__ . '/../..') . '/credentials/credentials.ini';
+    $credentials = realpath(__DIR__ . '/../../../../../..') . '/credentials/credentials.ini';
 
     // Before anything, check to make sure there was a $request given
     if (!is_array($request) || empty($request)) {
