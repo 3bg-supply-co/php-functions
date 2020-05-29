@@ -138,9 +138,12 @@ function getToday($dateFormat = 'Y-m-d', $returnObject = false, $initialDateTime
  */
 function setScriptName()
 {
-    // Get the trace of who called this script and remove the ".php" suffix
-    $backtrace = debug_backtrace();
-    define('SCRIPT_NAME', basename(end($backtrace)['file'], '.php'));
+    // Check to see if the SCRIPT_NAME has already been defined or not
+    if(!defined('SCRIPT_NAME')) {
+      // Get the trace of who called this script and remove the ".php" suffix
+      $backtrace = debug_backtrace();
+      define('SCRIPT_NAME', basename(end($backtrace)['file'], '.php'));
+    }
 }
 
 /**
@@ -154,8 +157,8 @@ function setScriptName()
  */
 function writeLog($message, $logFile = null)
 {
-  // Set the SCRIPT_NAME, if needed
-  defined('SCRIPT_NAME') or setScriptName();
+  // Set the SCRIPT_NAME
+  setScriptName();
 
   // Set the variables for this function
   static $logFileName = null;
