@@ -223,3 +223,13 @@ function getCredentials($request)
         }
     }
 }
+
+/**
+ * This function is used to validate the incoming JSON string
+ * @param  string  $strJson This is the JSON string in its raw format
+ * @return boolean          This will return true if the string was valid JSON, otherwise a fail will be generated
+ */
+function isValidJson(string $strJson) {
+  json_decode($strJson);
+  return (json_last_error() !== JSON_ERROR_NONE ? false : true);
+}
