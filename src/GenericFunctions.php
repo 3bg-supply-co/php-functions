@@ -233,3 +233,13 @@ function isValidJson(string $strJson) {
   json_decode($strJson);
   return (json_last_error() !== JSON_ERROR_NONE ? false : true);
 }
+
+/**
+ * This function is a shortcut to check if the object property has been set
+ * @param  stdClass $object   This is the object that is to be tested
+ * @param  string   $property This is the property that will be checked for in the $object
+ * @return boolean            This will return true if it exists, false if not.
+ */
+function checkProperty($object, $property) {
+  return isset($object->{$property});
+}
