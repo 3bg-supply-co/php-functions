@@ -89,7 +89,7 @@ class ApiResponse {
       "data"    => $this->data,
       "errors"  => $this->errors,
     ];
-    $encodedJson = json_encode($jsonString);
+    $encodedJson = json_encode($jsonString, JSON_PRETTY_PRINT);
     header('Content-Type: application/json;charset=utf-8');
     echo $encodedJson;
     writeLog("Send Response JSON String: " . $encodedJson);
@@ -114,5 +114,28 @@ class ApiResponse {
 
     // Throw an exception with this information
     throw new \Exception($this->message, 1);
+  }
+
+  /**
+   * This method is used to send a fail response without throwing an exception.
+   * @method sendFailResponse
+   * @param  string           $message This optional parameter will be included in the 'message' attribute of the 'errors' response if given
+   * @param  mixed            $data    This optional parameter can be given to be included in the 'errors' attribute of the response. NOTE: The $data will be converted to an array and added to the 'errors'
+   * @return string                    This method will output the JSON string version of the response
+   */
+  public function sendFailResponse($data = null) {
+    $this->setFailure();
+    if($data != null) {
+      // Since the $data was given, check to see if it is a string or not
+      if(is_string($data)) {
+        $this->addError((object) ['message' => $data]);
+      } else {
+        if(!is_object($data)) {
+          $data = (object) $data;
+        }
+        $this->addError($data);
+      }
+    }
+    $this->sendResponse();
   }
 }
