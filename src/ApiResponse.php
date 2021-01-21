@@ -89,7 +89,7 @@ class ApiResponse {
       "data"    => $this->data,
       "errors"  => $this->errors,
     ];
-    $encodedJson = json_encode($jsonString, JSON_PRETTY_PRINT);
+    $encodedJson = json_encode($jsonString);
     header('Content-Type: application/json;charset=utf-8');
     echo $encodedJson;
     writeLog("Send Response JSON String: " . $encodedJson);
